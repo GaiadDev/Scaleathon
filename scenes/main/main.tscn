@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7fwu4sbj4gyh"]
+
+[ext_resource type="PackedScene" uid="uid://nufckd8vyjjx" path="res://scenes/player/player.tscn" id="1_51sb2"]
+
+[sub_resource type="Sky" id="Sky_l8r15"]
+
+[sub_resource type="Environment" id="Environment_5misk"]
+sky = SubResource("Sky_l8r15")
+ambient_light_source = 3
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xb1xu"]
+size = Vector2(20, 20)
+
+[node name="Main" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5misk")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+use_collision = true
+mesh = SubResource("PlaneMesh_xb1xu")
+
+[node name="Player" parent="." instance=ExtResource("1_51sb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.964132, 0.265422, 0, -0.265422, 0.964132, 0, 4, 8.31978)

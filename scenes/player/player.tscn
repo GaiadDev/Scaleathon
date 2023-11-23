@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://nufckd8vyjjx"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_1jw1o"]
+[ext_resource type="PackedScene" uid="uid://dofj2hy81c8jg" path="res://scenes/components/velocity_component.tscn" id="2_eckfr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e2eiv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6eqb5"]
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_1jw1o")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("2_eckfr")]
+max_speed = 10
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_e2eiv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6eqb5")
