@@ -25,7 +25,7 @@ use_collision = true
 mesh = SubResource("PlaneMesh_xb1xu")
 
 [node name="Player" parent="." instance=ExtResource("1_51sb2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.38939, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.964132, 0.265422, 0, -0.265422, 0.964132, 0, 4, 8.31978)

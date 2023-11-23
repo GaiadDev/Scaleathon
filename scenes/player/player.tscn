@@ -11,7 +11,7 @@
 script = ExtResource("1_1jw1o")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("2_eckfr")]
-max_speed = 10
+max_speed = 30
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_e2eiv")
